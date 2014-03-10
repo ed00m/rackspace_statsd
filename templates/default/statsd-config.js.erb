@@ -1,5 +1,5 @@
 {
-<% node[:statsd].each do |key, value| -%>
+<% node['rackspace_statsd']['config'].each do |key, value| -%>
   <% if key != "backends" then -%>
     <%= "#{key}: \"#{value}\"," %>
   <% else -%>

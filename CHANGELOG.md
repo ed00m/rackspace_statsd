@@ -3,9 +3,13 @@ statsd CHANGELOG
 
 This file is used to list changes made in each version of the statsd cookbook.
 
+1.0.0
+-----
+- Rackspace rebuild, change namespace to rackspace_statsd
+
 0.1.0
 -----
-- [your_name] - Initial release of statsd
+- Initial release of statsd
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
