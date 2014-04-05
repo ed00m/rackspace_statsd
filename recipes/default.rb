@@ -20,8 +20,10 @@
 include_recipe "nodejs"
 include_recipe "runit"
 
-package "git" do
-  action :install
+if node['rackspace_statsd']['install_type'] == 'git'
+  package "git" do
+    action :install
+  end
 end
 
 git "/opt/statsd" do
@@ -43,4 +45,3 @@ runit_service "statsd" do
   service_name "statsd"
   default_logger true
 end
-

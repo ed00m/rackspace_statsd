@@ -35,7 +35,6 @@ Recipes
 Usage
 -----
 #### statsd::default
-TODO: Write usage instructions for each cookbook.
 
 e.g.
 Just include `statsd` in your node's `run_list`:
@@ -55,7 +54,6 @@ Please see the guidelines [here](https://github.com/rackspace-cookbooks/contribu
 
 License and Authors
 -------------------
-Authors 
+Authors
 - Matthew Thode (<matthew.thode@rackspace.com>)
 - Ryan Richard (<ryan.richard@rackspace.com>)
-
