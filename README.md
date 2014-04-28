@@ -27,6 +27,10 @@ You can add any arbitrary directive (`key`) as ['rackspace_statsd']['config']['k
 - default['rackspace_statsd']['config']['flushInterval'] = 60000
 - default['rackspace_statsd']['config']['backends'] = [ "./backends/graphite" ]
 
+* Template location overrides
+- default['rackspace_statsd']['templates']['config.js'] = 'rackspace_statsd'
+
+
 Recipes
 -------
 #### statsd::default
