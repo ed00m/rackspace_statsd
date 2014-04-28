@@ -28,5 +28,4 @@ describe 'rackspace_statsd::default' do
   it 'includes the nodejs recipe' do
     expect(chef_run).to include_recipe('nodejs::default')
   end
-  
 end
