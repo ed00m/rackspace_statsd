@@ -26,8 +26,8 @@ package 'git' do
 end
 
 git '/opt/statsd' do
-  repository 'git@github.com/etsy/statsd.git'
-  revision node['rackspace_statsd']['git']['branch']
+  repository 'https://github.com/etsy/statsd.git'
+  revision node['rackspace_statsd']['git']['revision']
   user 'root'
   group 'root'
 end

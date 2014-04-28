@@ -9,7 +9,7 @@ group :testing do
   gem 'strainer',   '~> 3.3'
   gem 'chef',       '~> 11.8'
   gem 'rspec',      '~> 2.14'
-  gem 'rubocop',    '~> 0.18.0'
+  gem 'rubocop',    '~> 0.21.0'
   gem 'rake',       '~> 10.1'
 end
 
@@ -18,4 +18,5 @@ group :integration do
   gem 'kitchen-vagrant', '~> 0.14'
   gem 'kitchen-rackspace', '>= 0.4.0'
   gem 'serverspec', '~> 0.15.1'
+  gem 'vagrant-wrapper', '~> 1.2'
 end

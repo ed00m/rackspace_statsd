@@ -3,7 +3,7 @@
 default['rackspace_statsd']['install_type'] = 'git'
 
 # Specific which revision, tag or branch to install
-default['rackspace_statsd']['git']['branch'] = 'master'
+default['rackspace_statsd']['git']['revision'] = 'master'
 
 # Settings for config file
 default['rackspace_statsd']['config']['graphitePort'] = '2003'
