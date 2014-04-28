@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: statsd
+# Cookbook Name:: rackspace_statsd
 # Recipe:: default
 #
 # Copyright 2013 Rackspace, Inc.
@@ -22,7 +22,7 @@ include_recipe 'runit'
 
 package 'git' do
   action :install
-  only_if { node['rackspac_statsd']['install_type'] == git }
+  only_if { node['rackspace_statsd']['install_type'] == 'git' }
 end
 
 git '/opt/statsd' do
@@ -33,6 +33,7 @@ git '/opt/statsd' do
 end
 
 template '/opt/statsd/config.js' do
+  cookbook node['rackspace_statsd']['templates']['config.js']
   source 'statsd-config.js.erb'
   mode 0644
   owner 'root'

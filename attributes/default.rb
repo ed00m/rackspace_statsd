@@ -15,3 +15,6 @@ default['rackspace_statsd']['config']['mgmt_port'] = 8126
 default['rackspace_statsd']['config']['title'] = 'statsd'
 default['rackspace_statsd']['config']['flushInterval'] = 60000 # rubocop: disable NumericLiterals
 default['rackspace_statsd']['config']['backends'] = ['./backends/graphite']
+
+# template overrides
+default['rackspace_statsd']['templates']['config.js'] = 'rackspace_statsd'

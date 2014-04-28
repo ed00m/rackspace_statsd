@@ -3,14 +3,14 @@
 require 'spec_helper'
 
 describe 'rackspace_statsd::default' do
-  let(:chef_run) { ChefSpec::Runner.new(platform: 'redhat', version: '6.5').converge(described_recipe) }
+  let(:chef_run) { ChefSpec::Runner.new(platform: 'ubuntu', version: '12.04').converge(described_recipe) }
 
   it 'installs the package git' do
     expect(chef_run).to install_package('git')
   end
 
   it 'checkouts a statsd git repo' do
-    expect(chef_run).to checkout_git('/opt/statsd')
+    expect(chef_run).to sync_git('/opt/statsd')
   end
 
   it 'sets up config.js from template' do
@@ -21,4 +21,12 @@ describe 'rackspace_statsd::default' do
     )
   end
 
+  it 'includes the runit recipe' do
+    expect(chef_run).to include_recipe('runit::default')
+  end
+
+  it 'includes the nodejs recipe' do
+    expect(chef_run).to include_recipe('nodejs::default')
+  end
+  
 end
