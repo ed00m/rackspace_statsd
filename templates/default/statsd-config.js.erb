@@ -1,5 +1,10 @@
+/*
+ CHEF MANAGED FILE: DO NOT EDIT
+ Controlling Cookbook: <%=  @cookbook_name %>
+*/
+
 {
-<% node[:statsd].each do |key, value| -%>
+<% node['rackspace_statsd']['config'].each do |key, value| -%>
   <% if key != "backends" then -%>
     <%= "#{key}: \"#{value}\"," %>
   <% else -%>

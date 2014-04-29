@@ -1,68 +1,67 @@
 statsd Cookbook
 ===============
-TODO: Enter the cookbook description here.
+This is a simple cookbook to install statsd via git. It leverages runit and nodejs to run the service.
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+* Supports
+ - `centos/rhel 6+`
+ - `ubuntu 12.04`
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+#### cookbooks
+- `nodejs`
+- `runit`
 
-e.g.
 #### packages
-- `toaster` - statsd needs toaster to brown your bagel.
+- `git` - git packages required to install statsd
 
 Attributes
 ----------
-TODO: List you cookbook attributes here.
+This cookbook uses a pure config hash to configure statsd. The base hash is provided at `node['rackspace_statsd']['config']` and the default values are populated.
 
-e.g.
-#### statsd::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['statsd']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+You can add any arbitrary directive (`key`) as ['rackspace_statsd']['config']['key'] = 'value'
+
+- default['rackspace_statsd']['config']['graphitePort'] = '2003'
+- default['rackspace_statsd']['config']['graphiteHost'] = '127.0.0.1'
+- default['rackspace_statsd']['config']['debug'] = false
+- default['rackspace_statsd']['config']['address'] = '0.0.0.0'
+- default['rackspace_statsd']['config']['port'] = 8125
+- default['rackspace_statsd']['config']['mgmt_port'] = 8126
+- default['rackspace_statsd']['config']['title'] = 'statsd'
+- default['rackspace_statsd']['config']['flushInterval'] = 60000
+- default['rackspace_statsd']['config']['backends'] = [ "./backends/graphite" ]
+
+* Template location overrides
+- default['rackspace_statsd']['templates']['config.js'] = 'rackspace_statsd'
+
+
+Recipes
+-------
+#### rackspace_statsd::default
+- installs and configures statsd
 
 Usage
 -----
-#### statsd::default
-TODO: Write usage instructions for each cookbook.
+#### rackspace_statsd::default
 
 e.g.
-Just include `statsd` in your node's `run_list`:
+Just include `rackspace_statsd` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[statsd]"
+    "recipe[rackspace_statsd]"
   ]
 }
 ```
 
-Contributing
-------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
+Contributing & Testing
+----------------------
+Please see the guidelines [here](https://github.com/rackspace-cookbooks/contributing/blob/master/CONTRIBUTING.md)
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors
+- Matthew Thode (<matthew.thode@rackspace.com>)
+- Ryan Richard (<ryan.richard@rackspace.com>)
