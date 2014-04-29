@@ -14,7 +14,7 @@ describe 'rackspace_statsd::default' do
   end
 
   it 'sets up config.js from template' do
-    expect(chef_run).to create_template('/opt/statsd/config.js').with(
+    expect(chef_run).to create_template('/opt/statsd-v0.7.1/config.js').with(
       user: 'root',
       group: 'root',
       mode: 0644

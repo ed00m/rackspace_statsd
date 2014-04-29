@@ -2,6 +2,10 @@ statsd Cookbook
 ===============
 This is a simple cookbook to install statsd via git. It leverages runit and nodejs to run the service.
 
+* Supports
+ - `centos/rhel 6+`
+ - `ubuntu 12.04`
+
 Requirements
 ------------
 #### cookbooks

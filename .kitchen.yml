@@ -26,3 +26,5 @@ suites:
     run_list:
       - recipe[rackspace_statsd::default]
     attributes:
+    excludes:
+      - debian-7.2.0

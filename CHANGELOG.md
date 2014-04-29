@@ -6,6 +6,7 @@ This file is used to list changes made in each version of the statsd cookbook.
 1.0.0
 -----
 - Rackspace rebuild, change namespace to rackspace_statsd
+- limit to centos/rhel/ubuntu
 
 0.1.0
 -----
