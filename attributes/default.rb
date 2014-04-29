@@ -1,4 +1,3 @@
-
 # Install types accepted: git
 default['rackspace_statsd']['install_type'] = 'git'
 

@@ -37,21 +37,21 @@ You can add any arbitrary directive (`key`) as ['rackspace_statsd']['config']['k
 
 Recipes
 -------
-#### statsd::default
+#### rackspace_statsd::default
 - installs and configures statsd
 
 Usage
 -----
-#### statsd::default
+#### rackspace_statsd::default
 
 e.g.
-Just include `statsd` in your node's `run_list`:
+Just include `rackspace_statsd` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[statsd]"
+    "recipe[rackspace_statsd]"
   ]
 }
 ```
