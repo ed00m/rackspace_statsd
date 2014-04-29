@@ -10,7 +10,7 @@ describe 'rackspace_statsd::default' do
   end
 
   it 'checkouts a statsd git repo' do
-    expect(chef_run).to sync_git('/opt/statsd')
+    expect(chef_run).to sync_git('/opt/statsd-v0.7.1')
   end
 
   it 'sets up config.js from template' do

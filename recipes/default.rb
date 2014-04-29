@@ -25,14 +25,14 @@ package 'git' do
   only_if { node['rackspace_statsd']['install_type'] == 'git' }
 end
 
-git '/opt/statsd' do
+git "/opt/statsd-#{node['rackspace_statsd']['git']['revision']}" do
   repository 'https://github.com/etsy/statsd.git'
   revision node['rackspace_statsd']['git']['revision']
   user 'root'
   group 'root'
 end
 
-template '/opt/statsd/config.js' do
+template "/opt/statsd-#{node['rackspace_statsd']['git']['revision']}/config.js" do
   cookbook node['rackspace_statsd']['templates']['config.js']
   source 'statsd-config.js.erb'
   mode 0644
